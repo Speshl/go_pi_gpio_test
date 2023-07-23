@@ -38,7 +38,7 @@ func main() {
 
 	servo.DutyCycle(midvalue, cycleLen)
 	log.Printf("Servo to middle")
-	time.Sleep(30 * time.Second)
+	time.Sleep(5 * time.Second)
 
 	i := uint32(100)
 	for {
@@ -46,7 +46,7 @@ func main() {
 			i = minvalue
 		}
 		log.Printf("Sending %d of %d\n", i, maxvalue)
-		//servo.DutyCycle(i, cycleLen)
+		servo.DutyCycle(i, cycleLen)
 		time.Sleep(200 * time.Millisecond)
 		i++
 	}
