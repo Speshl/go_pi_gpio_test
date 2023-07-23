@@ -40,12 +40,13 @@ func main() {
 	log.Printf("Servo to middle")
 	time.Sleep(5 * time.Second)
 
+	log.Println("Start sweeping")
 	i := uint32(100)
 	for {
 		if i > maxvalue {
 			i = minvalue
 		}
-		log.Printf("Sending %d of %d\n", i, maxvalue)
+		//log.Printf("Sending %d of %d\n", i, maxvalue)
 		servo.DutyCycle(i, cycleLen)
 		time.Sleep(20 * time.Millisecond)
 		i++
