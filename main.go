@@ -19,9 +19,9 @@ const servoPinID = 13
 // const tiltPinID = 15
 
 const frequency = 100000
-const cycleLen = uint32(1024)
-const maxvalue = uint32(1024)
-const midvalue = uint32(100)
+const cycleLen = uint32(255)
+const maxvalue = uint32(255)
+const midvalue = uint32(127)
 const minvalue = uint32(0)
 
 func main() {
@@ -43,7 +43,7 @@ func main() {
 		}
 		log.Printf("Sending %d of %d\n", i, maxvalue)
 		servo.DutyCycle(i, maxvalue)
-		time.Sleep(100 * time.Millisecond)
-		i += 10
+		time.Sleep(500 * time.Millisecond)
+		i += 5
 	}
 }
