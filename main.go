@@ -66,7 +66,7 @@ func main() {
 			i++
 		}
 	} else {
-		esc := rpio.Pin(servoPinID)
+		esc := rpio.Pin(escPinID)
 		esc.Mode(rpio.Pwm)
 		//c.pins.servo.Pwm()
 		esc.Freq(frequency)
