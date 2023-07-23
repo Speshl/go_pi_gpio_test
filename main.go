@@ -48,9 +48,13 @@ func main() {
 		for {
 			if i > maxvalue {
 				i = minvalue
+			}
+			if i == maxvalue {
+				log.Println("waiting on top")
 				time.Sleep(2 * time.Second)
 			}
 			if i == minvalue {
+				log.Println("Waiting at bottom")
 				time.Sleep(2 * time.Second)
 			}
 			//log.Printf("Sending %d of %d\n", i, maxvalue)
