@@ -71,10 +71,14 @@ func main() {
 		//c.pins.servo.Pwm()
 		esc.Freq(frequency)
 
+		log.Println("Starting ESC Calibration")
+		log.Println("Setting FULL throttle for 10 seconds")
 		esc.DutyCycle(maxvalue, cycleLen)
-		time.Sleep(5 * time.Second)
+		time.Sleep(10 * time.Second)
+		log.Println("Setting MIN throttle for 5 seconds")
 		esc.DutyCycle(minvalue, cycleLen)
 		time.Sleep(5 * time.Second)
+		log.Println("Setting CENTER throttle for 5 seconds")
 		esc.DutyCycle(midvalue, cycleLen)
 		time.Sleep(5 * time.Second)
 		for {
