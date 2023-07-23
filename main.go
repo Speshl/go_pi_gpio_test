@@ -19,7 +19,7 @@ const servoPinID = 13
 // const tiltPinID = 15
 
 const frequency = 100000
-const cycleLen = uint32(1000)
+const cycleLen = uint32(2000)
 const maxvalue = uint32(200)
 const midvalue = uint32(150)
 const minvalue = uint32(100)
@@ -41,13 +41,17 @@ func main() {
 
 		servo.DutyCycle(midvalue, cycleLen)
 		log.Printf("Servo to middle")
-		time.Sleep(60 * time.Second)
+		time.Sleep(5 * time.Second)
 
 		log.Println("Start sweeping")
 		i := uint32(100)
 		for {
 			if i > maxvalue {
 				i = minvalue
+				time.Sleep(2 * time.Second)
+			}
+			if i == minvalue {
+				time.Sleep(2 * time.Second)
 			}
 			//log.Printf("Sending %d of %d\n", i, maxvalue)
 			servo.DutyCycle(i, cycleLen)
