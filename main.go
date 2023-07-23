@@ -20,9 +20,9 @@ const servoPinID = 13
 
 const frequency = 100000
 const cycleLen = uint32(2000)
-const maxvalue = uint32(225)
+const maxvalue = uint32(250)
 const midvalue = uint32(150)
-const minvalue = uint32(75)
+const minvalue = uint32(50)
 
 const enableServo = true
 
