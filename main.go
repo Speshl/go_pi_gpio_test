@@ -28,6 +28,7 @@ func main() {
 	if err != nil {
 		log.Fatal("failed to open rpio")
 	}
+	defer rpio.Close()
 
 	servo := rpio.Pin(servoPinID)
 	servo.Mode(rpio.Pwm)
@@ -39,6 +40,7 @@ func main() {
 		if i > maxvalue {
 			i = 0
 		}
+		log.Printf("Sending %d of %d\n", i, maxvalue)
 		servo.DutyCycle(i, maxvalue)
 		time.Sleep(100 * time.Millisecond)
 	}
