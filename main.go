@@ -18,7 +18,7 @@ const servoPinID = 13
 // const panPinID = 14
 // const tiltPinID = 15
 
-const frequency = 200000
+const frequency = 10000
 const cycleLen = uint32(255)
 const maxvalue = uint32(200)
 const midvalue = uint32(127)
