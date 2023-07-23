@@ -18,10 +18,10 @@ const servoPinID = 13
 // const panPinID = 14
 // const tiltPinID = 15
 
-const frequency = 10000
+const frequency = 100000
 const cycleLen = uint32(255)
 const maxvalue = uint32(200)
-const midvalue = uint32(127)
+const midvalue = uint32(150)
 const minvalue = uint32(100)
 
 func main() {
@@ -36,6 +36,10 @@ func main() {
 	//c.pins.servo.Pwm()
 	servo.Freq(frequency)
 
+	servo.DutyCycle(midvalue, cycleLen)
+	log.Printf("Servo to middle")
+	time.Sleep(5 * time.Second)
+
 	i := uint32(100)
 	for {
 		if i > maxvalue {
@@ -43,7 +47,7 @@ func main() {
 		}
 		log.Printf("Sending %d of %d\n", i, maxvalue)
 		servo.DutyCycle(i, cycleLen)
-		time.Sleep(500 * time.Millisecond)
-		i += 5
+		time.Sleep(200 * time.Millisecond)
+		i++
 	}
 }
