@@ -46,7 +46,7 @@ func main() {
 			i = minvalue
 		}
 		log.Printf("Sending %d of %d\n", i, maxvalue)
-		servo.DutyCycle(i, cycleLen)
+		//servo.DutyCycle(i, cycleLen)
 		time.Sleep(200 * time.Millisecond)
 		i++
 	}
