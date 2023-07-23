@@ -27,7 +27,7 @@ const minvalue = uint32(50)
 
 /*DON'T MODIFY THIS*/
 
-const enableServo = true
+const enableServo = false
 
 func main() {
 	err := rpio.Open()
