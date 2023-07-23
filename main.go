@@ -51,15 +51,15 @@ func main() {
 			}
 			if i == maxvalue {
 				log.Println("waiting on top")
-				time.Sleep(2 * time.Second)
+				time.Sleep(5 * time.Second)
 			}
 			if i == minvalue {
 				log.Println("Waiting at bottom")
-				time.Sleep(2 * time.Second)
+				time.Sleep(5 * time.Second)
 			}
 			//log.Printf("Sending %d of %d\n", i, maxvalue)
 			servo.DutyCycle(i, cycleLen)
-			time.Sleep(20 * time.Millisecond)
+			time.Sleep(100 * time.Millisecond)
 			i++
 		}
 	} else {
