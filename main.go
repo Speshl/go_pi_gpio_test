@@ -38,7 +38,7 @@ func main() {
 
 	servo.DutyCycle(midvalue, cycleLen)
 	log.Printf("Servo to middle")
-	time.Sleep(5 * time.Second)
+	time.Sleep(30 * time.Second)
 
 	i := uint32(100)
 	for {
