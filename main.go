@@ -20,9 +20,9 @@ const servoPinID = 13
 
 const frequency = 100000
 const cycleLen = uint32(1024)
-const maxvalue = uint32(300)
-const midvalue = uint32(200)
-const minvalue = uint32(100)
+const maxvalue = uint32(1024)
+const midvalue = uint32(100)
+const minvalue = uint32(0)
 
 func main() {
 	err := rpio.Open()
@@ -44,6 +44,6 @@ func main() {
 		log.Printf("Sending %d of %d\n", i, maxvalue)
 		servo.DutyCycle(i, maxvalue)
 		time.Sleep(100 * time.Millisecond)
-		i++
+		i += 10
 	}
 }
