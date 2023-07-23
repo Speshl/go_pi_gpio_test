@@ -41,7 +41,7 @@ func main() {
 
 		servo.DutyCycle(midvalue, cycleLen)
 		log.Printf("Servo to middle")
-		time.Sleep(5 * time.Second)
+		time.Sleep(60 * time.Second)
 
 		log.Println("Start sweeping")
 		i := uint32(100)
