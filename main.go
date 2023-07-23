@@ -18,7 +18,7 @@ const servoPinID = 13
 // const panPinID = 14
 // const tiltPinID = 15
 
-const frequency = 100000
+const frequency = 50000
 const cycleLen = uint32(255)
 const maxvalue = uint32(200)
 const midvalue = uint32(127)
@@ -36,7 +36,7 @@ func main() {
 	//c.pins.servo.Pwm()
 	servo.Freq(frequency)
 
-	i := uint32(0)
+	i := uint32(100)
 	for {
 		if i > maxvalue {
 			i = minvalue
