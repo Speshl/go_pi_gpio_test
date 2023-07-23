@@ -18,11 +18,14 @@ const servoPinID = 13
 // const panPinID = 14
 // const tiltPinID = 15
 
+/*DON'T MODIFY THIS*/
 const frequency = 100000
 const cycleLen = uint32(2000)
 const maxvalue = uint32(250)
 const midvalue = uint32(150)
 const minvalue = uint32(50)
+
+/*DON'T MODIFY THIS*/
 
 const enableServo = true
 
@@ -67,6 +70,16 @@ func main() {
 		esc.Mode(rpio.Pwm)
 		//c.pins.servo.Pwm()
 		esc.Freq(frequency)
-	}
 
+		esc.DutyCycle(maxvalue, cycleLen)
+		time.Sleep(5 * time.Second)
+		esc.DutyCycle(minvalue, cycleLen)
+		time.Sleep(5 * time.Second)
+		esc.DutyCycle(midvalue, cycleLen)
+		time.Sleep(5 * time.Second)
+		for {
+			esc.DutyCycle(200, cycleLen)
+			time.Sleep(5 * time.Second)
+		}
+	}
 }
